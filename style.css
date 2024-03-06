@@ -6,7 +6,7 @@
   --secondary-color: #f9fafe;
   --text-color: #333333;
   --white: #ffffff;
-  --max-width: 1200px;
+  --max-width: 1000px;
 }
 
 * {
@@ -18,6 +18,7 @@
 body {
   font-family: "Poppins", sans-serif;
   background-color: var(--secondary-color);
+  scroll-behavior: smooth;
 }
 
 nav {
@@ -71,12 +72,7 @@ nav {
 
 .container {
   max-width: var(--max-width);
-  margin: auto;
-  padding: 1rem;
   min-height: calc(100vh - 100px);
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 5rem;
 }
 
 .content__container {
@@ -136,11 +132,98 @@ nav {
   transition: 0.3s;
   cursor: pointer;
 }
+.heading{
+  font-size: 40px;
+  padding: 20px;
+}
 
 .content__container button:hover {
   background-color: var(--primary-color-dark);
 }
+section{
+  min-height: 100vh;
+  margin: auto;
+  padding: 1rem;
+}
+.about,
+.contact {
+    margin-bottom: 100px;
+    max-width: 700px;
+}
 
+.about h2,
+.contact h2 {
+    margin-top: 0;
+    color: var(--primary-color);
+}
+
+.contact form{
+   max-width: 70rem;
+   margin: 1rem auto;
+   text-align: center;
+   margin-bottom: 3rem;
+}
+.contact form .input-box{
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+}
+
+.contact form .input-box input,
+.contact form textarea{
+   width: 100%;
+   padding: .7rem;
+   font-size: 1.3rem;
+   color: var(--text-color);
+   background: var(--second-bg-color);
+   border: 1px solid var(--text-color);
+   border-radius: .8rem;
+   margin: 1rem 0;
+}
+ .contact form .input-box input{
+   width: 49%;
+}
+.contact form textarea{
+   resize: none;
+}
+.btn{
+   margin-top: 2rem;
+   cursor: pointer;
+   padding: 18px;
+   background-color: var(--primary-color);
+   border: 1px;
+   border-radius: 15px;
+   font-size: 16px;
+   color: var(--white);
+   font-family: 'Courier New', Courier, monospace;
+}
+.footer{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   flex-wrap: wrap;
+   padding: 2rem 9%;
+   background: var(--second-bg-color);
+}
+.footer p{
+   font-size: 1.6rem;
+}
+.footer-iconTop a{
+   display: inline-flex;
+   justify-content: center;
+   align-items: center;
+   padding: .6rem;
+   background: var(--main-color);
+   border-radius: .8rem;
+   transition: ease .5s;
+}
+.footer-iconTop a:hover{
+   box-shadow: 0 0 1rem var(--main-color);
+}
+.footer-iconTop a i{
+   font-size: 2.4rem;
+   color: var(--second-bg-color);
+}
 @media (width < 900px) {
   .link a:not(.nav__btn) {
     display: none;
