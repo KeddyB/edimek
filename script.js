@@ -1,3 +1,14 @@
+//smooth scrolling
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+   anchor.addEventListener('click', function (e) {
+     e.preventDefault();
+ 
+     document.querySelector(this.getAttribute('href')).scrollIntoView({
+       behavior: 'smooth'
+     });
+   });
+ });
+
 //array of birthday wishes
 const birthdayWishes = [
     "Wishing you a day filled with love, joy, and all the happiness you deserve on your special day.",
@@ -56,24 +67,33 @@ const birthdayWishes = [
     "Sending you warm wishes and heartfelt greetings on your special day. Have a fantastic birthday!",
 ];
 
-const form = document.getElementById('contact-form').addEventListener('submit', function(event){
+
+//button for generating birthday wishes
+const form = document.getElementById('generateButton').addEventListener('click', function(event){
     event.preventDefault()
 
     const birthdayWishPos = Math.floor(Math.random() * birthdayWishes.length)
 
     const wish = birthdayWishes[birthdayWishPos]
+    const textarea = document.getElementById('wish')
 
-    document.getElementById('wish').value = wish
+    textarea.value = wish
 })
 
+//button to copy the generated wishes
+document.getElementById('copyBtn').addEventListener('click', async(e)=>{
+  e.preventDefault()
+  const textarea = document.getElementById('wish')
+  const button = document.getElementById('copyBtn')
+  try {
+    await navigator.clipboard.writeText(textarea.value)
+    button.innerHTML = "Copied"
 
-//smooth scrolling
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-   anchor.addEventListener('click', function (e) {
-     e.preventDefault();
- 
-     document.querySelector(this.getAttribute('href')).scrollIntoView({
-       behavior: 'smooth'
-     });
-   });
- });
+    setTimeout(() =>{
+      getSelection().removeAllRanges()
+      button.innerHTML = 'Copy'
+    }, 2000)
+  } catch (error) {
+    alert('error')
+  }
+})

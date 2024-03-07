@@ -125,7 +125,6 @@ nav {
   padding: 1rem;
   font-size: 0.8rem;
   white-space: nowrap;
-  background-color: var(--primary-color);
   color: var(--white);
   outline: none;
   border: none;
@@ -133,13 +132,21 @@ nav {
   transition: 0.3s;
   cursor: pointer;
 }
+#generateButton{
+  background-color: var(--primary-color);
+}
+#generateButton:hover{
+  background-color: var(--primary-color-dark);
+}
+#copyBtn{
+  background-color: rgb(72, 162, 173);
+}
+#copyBtn:hover{
+  background-color: var(--primary-color-dark);
+}
 .heading{
   font-size: 40px;
   padding: 20px;
-}
-
-.content__container button:hover {
-  background-color: var(--primary-color-dark);
 }
 section{
   margin: auto;
@@ -158,6 +165,9 @@ section{
 }
 .about p{
   text-align: justify;
+  color: var(--text-color);
+  line-height: 24px;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 .contact form{
@@ -179,6 +189,7 @@ section{
    font-size: 1.3rem;
    color: var(--text-color);
    border: 1px solid var(--primary-color);
+   background-color: #e2dffd;
    border-radius: .8rem;
    margin: 1rem 0;
 }
