@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="scroll-behavior: smooth;">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet' />
     <title>Edimek's Blog</title>
   </head>
   <body>
@@ -28,9 +29,9 @@
         <p>
           Lorem ipsum dolor aset
         </p>
-        <form>
-          <input type="text" placeholder="Generate a birthday wish" />
-          <button type="submit">Generate</button>
+        <form id="contact-form">
+          <input type="text" placeholder="Generate a birthday wish" id="wish"/>
+          <button type="submit" id="generateButton">Generate</button>
         </form>
       </div>
     </section>
@@ -73,8 +74,9 @@ Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac tu
          <p>Copyright &copy; 2024 Edimek | All Rights Reserved.</p>
       </div>
       <div class="footer-iconTop">
-         <a href="#home"><i class='bx bx-up-arrow-alt'></i></a>
+         <a href="#home"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAANtJREFUSEvtlEEKwjAQRV/PoaDoMVTwEB7BjWtP4sadW+8h4i0UFBS9RXVgAiEkzQQsCDWrljD//fyftqLlVbWsT/cAA430Zo22JKI+cFThGXC3QKwAJz5U0StgglgAobgzboLkACJ+AEaACPonkOcLMAVeqbiaAL5zKXXi5S57J0BKP2tcUUgKEBN/ALU6lbmeBZICrICtupsDIi7LB8i7QCTC8ed0S2AXRtUU0RrYA09vKAQ4yALYxHrIlRzOxACNn8MfkP1b/FxEWccl17RY7BvXtBha2kEHAW8WqCoZLgVpRgAAAABJRU5ErkJggg=="/></a>
       </div>
    </footer>
+   <script src="script.js"></script>
   </body>
 </html>
