@@ -261,10 +261,38 @@ section{
 .fa-instagram{
   color: #5420b4;
 }
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+.line {
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  margin: 5px;
+}
+.menu{
+  display: none;
+}
+
 
 @media (width < 900px) {
-  .link a:not(.nav__btn) {
+  .link a {
     display: none;
+  }
+  .menu{
+    display: flex;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+   cursor: pointer;
+   padding: 18px;
+   border: 1px;
+   border-radius: 15px;
+   font-size: 16px;
+  }
+  .menu i{
+    font-size: 1rem;
   }
 
   .container {
