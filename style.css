@@ -229,7 +229,7 @@ section{
    font-size: 1rem;
    color: var(--secondary-color);
 }
-.footer-iconTop a{
+.footer-iconTop a, .socials a{
    display: inline-flex;
    justify-content: center;
    align-items: center;
@@ -241,6 +241,25 @@ section{
 }
 .footer-iconTop a:hover{
    box-shadow: 0 0 1rem var(--text-color);
+}
+.socials{
+  display: flexbox;
+
+}
+.footer-iconTop a i{
+   font-size: 1.3rem;
+}
+.fa-whatsapp{
+  color: greenyellow;
+}
+.fa-facebook{
+  color: rgb(57, 105, 192);
+}
+.fa-x-twitter{
+  color: black;
+}
+.fa-instagram{
+  color: #5420b4;
 }
 
 @media (width < 900px) {
