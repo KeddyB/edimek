@@ -292,10 +292,13 @@ section{
   .menu i{
     font-size: 1rem;
   }
+  .hamburger{
+    animation: slideOut 0.5 ease backwards;
+  }
   .active{
     position: absolute;
     top: 30px;
-    left: 400px;
+    right: 0;
     display: flex;
     width: 200px;
     height: 600px;
@@ -304,17 +307,18 @@ section{
     box-shadow: 0 0 10px var(--primary-color);
     align-items: center;
     text-align: center;
+    animation: slideIn 0.5s ease forwards;
   }
   .active li{
     width: 160px;
     margin-top: 1rem;
-   cursor: pointer;
-   padding: 7px;
-   background-color: var(--primary-color);
-   border: 1px;
-   border-radius: 15px;
-   font-size: 16px;
-   color: var(--white);
+    cursor: pointer;
+    padding: 7px;
+    background-color: var(--primary-color);
+    border: 1px;
+    border-radius: 15px;
+    font-size: 16px;
+    color: var(--white);
   }
   .active li a{
     color: var(--white);
@@ -336,4 +340,14 @@ section{
     margin-right: auto;
     margin-left: auto;
   }
+  @keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
 }
