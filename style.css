@@ -301,7 +301,7 @@ section{
     right: 0;
     display: flex;
     width: 200px;
-    height: 600px;
+    height: 250px;
     border-radius: 5px;
     background-color:var(--secondary-color);
     box-shadow: 0 0 10px var(--primary-color);

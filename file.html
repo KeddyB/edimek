@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en" style="scroll-behavior: smooth;">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet' />
+    <title>Edimek's Blog</title>
+  </head>
+  <body>
+    <style>
+    	@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+:root {
+  --primary-color: #5c48ee;
+  --primary-color-dark: #0f1e6a;
+  --secondary-color: #f9fafe;
+  --text-color: #333333;
+  --white: #ffffff;
+  --max-width: 900px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--secondary-color);
+}
+
+nav {
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 1rem;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+a{
+  text-decoration: none;
+}
+.nav__logo a {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.nav__links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.link a {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-color);
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.link a:hover {
+  color: var(--primary-color);
+}
+
+.link .nav__btn {
+  padding: 0.5rem 2rem;
+  color: var(--white) !important;
+  background-color: var(--primary-color);
+  border-radius: 5px;
+}
+
+.link .nav__btn:hover {
+  background-color: var(--primary-color-dark);
+}
+
+.container {
+  max-width: var(--max-width);
+  margin-bottom: 100px;
+  margin-top: 100px;
+  
+}
+
+.content__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.content__container h1 {
+  font-size: 3rem;
+  font-weight: 400;
+  line-height: 3.5rem;
+  color: var(--primary-color-dark);
+  margin-bottom: 1rem;
+}
+
+.heading__1 {
+  font-weight: 700;
+}
+
+.heading__2 {
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.content__container p {
+  font-size: 1rem;
+  color: var(--text-color);
+  margin-bottom: 2rem;
+}
+
+.content__container form {
+  display: flex;
+  align-items: center;
+}
+
+.content__container input {
+  width: 100%;
+  max-width: 300px;
+  padding: 1rem;
+  font-size: 0.8rem;
+  outline: none;
+  border: none;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.content__container button {
+  width: fit-content;
+  padding: 1rem;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  color: var(--white);
+  outline: none;
+  border: none;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  cursor: pointer;
+}
+#generateButton{
+  background-color: var(--primary-color);
+}
+#generateButton:hover{
+  background-color: var(--primary-color-dark);
+}
+#copyBtn{
+  background-color: rgb(72, 162, 173);
+}
+#copyBtn:hover{
+  background-color: var(--primary-color-dark);
+}
+.heading{
+  font-size: 40px;
+  padding: 20px;
+}
+section{
+  margin: auto;
+  padding: 1rem;
+}
+.about,
+.contact {
+    margin-bottom: 100px;
+    max-width: var(--max-width);
+}
+
+.about h2,
+.contact h2 {
+    margin-top: 0;
+    color: var(--primary-color);
+}
+.about p{
+  text-align: justify;
+  color: var(--text-color);
+  line-height: 24px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.contact form{
+   max-width: 70rem;
+   margin: 1rem auto;
+   text-align: center;
+   margin-bottom: 3rem;
+}
+.contact form .input-box{
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+}
+
+.contact form .input-box input,
+.contact form textarea{
+   width: 100%;
+   padding: .7rem;
+   font-size: 1.3rem;
+   color: var(--text-color);
+   border: 1px solid var(--primary-color);
+   background-color: #e2dffd;
+   border-radius: .8rem;
+   margin: 1rem 0;
+}
+ .contact form .input-box input{
+   width: 49%;
+}
+.contact form textarea{
+   resize: none;
+}
+.btn{
+   margin-top: 2rem;
+   cursor: pointer;
+   padding: 18px;
+   background-color: var(--primary-color);
+   border: 1px;
+   border-radius: 15px;
+   font-size: 16px;
+   color: var(--white);
+   font-family: 'Courier New', Courier, monospace;
+}
+.footer{
+  background: var(--primary-color);
+}
+.footer-container{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   flex-wrap: wrap;
+   padding: 1rem;
+   margin: auto;
+   background: var(--primary-color);
+   max-width: var(--max-width);
+}
+.footer p{
+   font-size: 1rem;
+   color: var(--secondary-color);
+}
+.footer-iconTop a, .socials a{
+   display: inline-flex;
+   justify-content: center;
+   align-items: center;
+   margin: auto;
+   padding: .5rem;
+   background: var(--secondary-color);
+   border-radius: .8rem;
+   transition: ease .5s;
+}
+.footer-iconTop a:hover{
+   box-shadow: 0 0 1rem var(--text-color);
+}
+.socials{
+  display: flexbox;
+
+}
+.footer-iconTop a i{
+   font-size: 1.3rem;
+}
+.fa-whatsapp{
+  color: greenyellow;
+}
+.fa-facebook{
+  color: rgb(57, 105, 192);
+}
+.fa-x-twitter{
+  color: black;
+}
+.fa-instagram{
+  color: #5420b4;
+}
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+.menu{
+  display: none;
+}
+
+
+@media (width < 900px) {
+  .link a {
+    display: none;
+  }
+
+  .menu{
+    display: flex;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    cursor: pointer;
+    padding: 18px;
+    border: 1px;
+    border-radius: 15px;
+    font-size: 16px;
+  }
+  .hide{
+    display: none;
+  }
+  .menu i{
+    font-size: 1rem;
+  }
+  .hamburger{
+    animation: slideOut 0.5 ease backwards;
+  }
+  .active{
+    position: absolute;
+    top: 30px;
+    right: 0;
+    display: flex;
+    width: 200px;
+    height: 600px;
+    border-radius: 5px;
+    background-color:var(--secondary-color);
+    box-shadow: 0 0 10px var(--primary-color);
+    align-items: center;
+    text-align: center;
+    animation: slideIn 0.5s ease forwards;
+  }
+  .active li{
+    width: 160px;
+    margin-top: 1rem;
+    cursor: pointer;
+    padding: 7px;
+    background-color: var(--primary-color);
+    border: 1px;
+    border-radius: 15px;
+    font-size: 16px;
+    color: var(--white);
+  }
+  .active li a{
+    color: var(--white);
+  }
+  ul i{
+    color: var(--primary-color-dark);
+    padding: 10px;
+    font-size: 30px;
+  }
+  .container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .content__container {
+    text-align: center;
+  }
+
+  .content__container form {
+    margin-right: auto;
+    margin-left: auto;
+  }
+  @keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+}
+    </style>
+    <nav>
+      <div class="nav__logo" id="nav"><a href="#">Edimek</a></div>
+      <ul class="nav__links">
+        <li class="link"><a href="#home">Home</a></li>
+        <li class="link"><a href="#about">About</a></li>
+        <li class="link"><a href="#contact">Contact</a></li>
+        <li class="link"><a href="#">Blog</a></li>
+        <li class="link"><a href="#" class="nav__btn">Register</a></li>
+      </ul>
+      <button class="menu"><i class="fa-solid fa-bars"></i></button>
+      <ul class="hamburger">
+        <i class="fa-solid fa-square-xmark"></i>
+        <li class="line"><a href="#home">Home</a></li>
+        <li class="line"><a href="#about">About</a></li>
+        <li class="line"><a href="#contact">Contact</a></li>
+        <li class="line"><a href="#">Blog</a></li>
+        <li class="line"><a href="#" class="nav__btn">Register</a></li>
+      </ul>
+    </div>
+    </nav>
+    <section class="container" id="home">
+      <div class="content__container">
+        <h1>
+          Wish your loved ones<br />A
+          <span class="heading__1">Wonderful</span><br />
+          <span class="heading__2">Birthday</span>
+        </h1>
+        <p>
+          
+        </p>
+        <form>
+          <input type="text" placeholder="Generate a birthday wish" id="wish"/>
+          <button type="submit" id="generateButton">Generate</button>
+          <button id="copyBtn">Copy</button>
+        </form>
+      </div>
+    </section>
+    <section class="about" id="about">
+        <h2 class="heading">About Us</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at justo et ante laoreet luctus...
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus id libero ut metus pharetra accumsan vel nec elit. Integer lacinia ante nec nulla consectetur, ac suscipit risus efficitur. Sed vulputate, dui et vehicula rhoncus, nisi magna hendrerit ex, nec ultrices dolor ligula eget ex. 
+
+Fusce nec commodo justo, nec pharetra magna. Nullam sed urna leo. Curabitur id suscipit est. Maecenas tempus lectus non libero interdum, ac molestie enim iaculis. Proin rutrum sollicitudin sapien, eu tristique magna scelerisque ut. Cras vel turpis sed velit iaculis aliquam.
+
+Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Ut auctor, nunc a finibus consectetur, risus felis sollicitudin odio, nec consequat velit libero ac purus. Mauris ac turpis vitae libero interdum faucibus. Suspendisse vel ultrices nunc, in molestie felis. Nulla quis purus vitae felis suscipit iaculis vel vel dui.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus id libero ut metus pharetra accumsan vel nec elit. Integer lacinia ante nec nulla consectetur, ac suscipit risus efficitur. Sed vulputate, dui et vehicula rhoncus, nisi magna hendrerit ex, nec ultrices dolor ligula eget ex. 
+
+Fusce nec commodo justo, nec pharetra magna. Nullam sed urna leo. Curabitur id suscipit est. Maecenas tempus lectus non libero interdum, ac molestie enim iaculis. Proin rutrum sollicitudin sapien, eu tristique magna scelerisque ut. Cras vel turpis sed velit iaculis aliquam.
+
+Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Ut auctor, nunc a finibus consectetur, risus felis sollicitudin odio, nec consequat velit libero ac purus. Mauris ac turpis vitae libero interdum faucibus. Suspendisse vel ultrices nunc, in molestie felis. Nulla quis purus vitae felis suscipit iaculis vel vel dui.
+
+        </p>
+    </section>
+
+    <section class="contact" id="contact">
+      <h2 class="heading">Contact <span>Us</span></h2>
+      <form action="#">
+         <div class="input-box">
+            <input type="text" placeholder="Full Name">
+            <input type="email" placeholder="Email Address">
+         </div>
+         <div class="input-box">
+            <input type="number" placeholder="Phone Number">
+            <input type="text" placeholder="Email Subject">
+         </div>
+         <textarea name="" id="" cols="30" rows="10"></textarea>
+         <input type="submit" value="Send Message" class="btn">
+      </form>
+   </section>
+
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-text">
+         <p>Copyright &copy; 2024 Edimek | All Rights Reserved.</p>
+      </div>
+      <div class="socials">
+          <a href=""><i class="fa-brands fa-x-twitter"></i></a>
+          <a href=""><i class="fa-brands fa-facebook"></i></a>
+          <a href=""><i class="fa-brands fa-whatsapp"></i></a>
+          <a class="insta" href=""><i class="fa-brands fa-instagram"></i></a>
+        </div>
+      <div class="footer-iconTop">
+        <a href="#nav"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAANtJREFUSEvtlEEKwjAQRV/PoaDoMVTwEB7BjWtP4sadW+8h4i0UFBS9RXVgAiEkzQQsCDWrljD//fyftqLlVbWsT/cAA430Zo22JKI+cFThGXC3QKwAJz5U0StgglgAobgzboLkACJ+AEaACPonkOcLMAVeqbiaAL5zKXXi5S57J0BKP2tcUUgKEBN/ALU6lbmeBZICrICtupsDIi7LB8i7QCTC8ed0S2AXRtUU0RrYA09vKAQ4yALYxHrIlRzOxACNn8MfkP1b/FxEWccl17RY7BvXtBha2kEHAW8WqCoZLgVpRgAAAABJRU5ErkJggg=="/></a>
+      </div>
+      </div> 
+   </footer>
+   <script>
+  	//smooth scrolling
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+   anchor.addEventListener('click', function (e) {
+     e.preventDefault();
+ 
+     document.querySelector(this.getAttribute('href')).scrollIntoView({
+       behavior: 'smooth'
+     });
+   });
+ });
+
+//array of birthday wishes
+const birthdayWishes = [
+    "Wishing you a day filled with love, joy, and all the happiness you deserve on your special day.",
+    "May your birthday be as beautiful and special as you are to me. Happy birthday!",
+    "On your birthday, I wish you abundant happiness and love. May all your dreams become a reality. Happy birthday!",
+    "Sending you warm wishes and lots of love on your birthday. May you have a fantastic day!",
+    "Happy birthday to someone who brings so much joy and positivity into the lives of others. Have a wonderful day!",
+    "May your birthday be the start of a year filled with good luck, good health, and much happiness. Happy birthday!",
+    "Wishing you a day filled with love, laughter, and cherished moments. Happy birthday!",
+    "Sending you heartfelt wishes for a birthday that's as special as you are. Happy birthday!",
+    "On your special day, I want you to know how much you mean to me. Happy birthday, my dear friend!",
+    "May your birthday be as bright and beautiful as you are. Happy birthday!",
+    "Wishing you all the best on your birthday and throughout the year. Have a fantastic day!",
+    "Sending you warm hugs and best wishes on your birthday. May it be a day full of joy and celebration!",
+    "Happy birthday! May your day be filled with laughter, love, and unforgettable memories.",
+    "Wishing you a day filled with laughter, love, and happiness. Happy birthday!",
+    "May your birthday be filled with everything you love and more. Have a fantastic day!",
+    "Happy birthday! May this year bring you all the happiness and success you deserve.",
+    "Sending you heartfelt wishes on your birthday. May it be a day full of joy and blessings.",
+    "On your birthday, I wish you endless happiness, love, and unforgettable moments. Happy birthday!",
+    "Wishing you a birthday that's just as amazing as you are. Have a fantastic day!",
+    "Happy birthday to someone who fills my life with love and laughter. Have a wonderful day!",
+    "May your birthday be filled with laughter, love, and cherished memories. Happy birthday!",
+    "Wishing you a day full of joy, laughter, and love on your special day. Happy birthday!",
+    "Happy birthday! May your day be filled with happiness, love, and all the things that bring you joy.",
+    "Sending you warm wishes and heartfelt greetings on your birthday. Have a fantastic day!",
+    "On your special day, I want you to know how much you mean to me. Happy birthday!",
+    "May your birthday be as special and beautiful as you are to me. Happy birthday!",
+    "Wishing you all the happiness and love in the world on your birthday. Have a fantastic day!",
+    "Happy birthday! May your day be filled with laughter, joy, and lots of love.",
+    "Sending you warm wishes and lots of love on your birthday. May it be a day full of joy and celebration!",
+    "Wishing you a birthday that's as beautiful and special as you are. Happy birthday!",
+    "On your birthday, I want you to know how much you mean to me. Happy birthday!",
+    "May your birthday be filled with happiness, love, and all the things you enjoy the most. Happy birthday!",
+    "Sending you warm wishes and heartfelt greetings on your special day. Have a fantastic birthday!",
+    "Happy birthday! May this year bring you all the happiness and success you deserve.",
+    "Wishing you a day filled with love, laughter, and cherished moments. Happy birthday!",
+    "On your special day, I want you to know how much you mean to me. Happy birthday, my dear friend!",
+    "May your birthday be as bright and beautiful as you are. Happy birthday!",
+    "Wishing you all the best on your birthday and throughout the year. Have a fantastic day!",
+    "Happy birthday! May your day be filled with laughter, love, and unforgettable memories.",
+    "Wishing you a day filled with joy, laughter, and love on your special day. Happy birthday!",
+    "May your birthday be filled with everything you love and more. Have a fantastic day!",
+    "Happy birthday to someone who fills my life with love and laughter. Have a wonderful day!",
+    "Wishing you a birthday that's just as amazing as you are. Have a fantastic day!",
+    "Happy birthday! May this year bring you all the happiness and success you deserve.",
+    "Sending you warm wishes and heartfelt greetings on your birthday. Have a fantastic day!",
+    "On your special day, I want you to know how much you mean to me. Happy birthday!",
+    "May your birthday be as special and beautiful as you are to me. Happy birthday!",
+    "Wishing you all the happiness and love in the world on your birthday. Have a fantastic day!",
+    "Happy birthday! May your day be filled with laughter, joy, and lots of love.",
+    "Sending you warm wishes and lots of love on your birthday. May it be a day full of joy and celebration!",
+    "Wishing you a birthday that's as beautiful and special as you are. Happy birthday!",
+    "On your birthday, I want you to know how much you mean to me. Happy birthday!",
+    "May your birthday be filled with happiness, love, and all the things you enjoy the most. Happy birthday!",
+    "Sending you warm wishes and heartfelt greetings on your special day. Have a fantastic birthday!",
+];
+
+
+//button for generating birthday wishes
+const form = document.getElementById('generateButton').addEventListener('click', function(event){
+    event.preventDefault()
+
+    const birthdayWishPos = Math.floor(Math.random() * birthdayWishes.length)
+
+    const wish = birthdayWishes[birthdayWishPos]
+    const textarea = document.getElementById('wish')
+
+    textarea.value = wish
+})
+
+//button to copy the generated wishes
+document.getElementById('copyBtn').addEventListener('click', async(e)=>{
+  e.preventDefault()
+  const textarea = document.getElementById('wish')
+  const button = document.getElementById('copyBtn')
+  try {
+    await navigator.clipboard.writeText(textarea.value)
+    button.innerHTML = "Copied"
+
+    setTimeout(() =>{
+      getSelection().removeAllRanges()
+      button.innerHTML = 'Copy'
+    }, 2000)
+  } catch (error) {
+    alert('error')
+  }
+})
+
+//hamburger menu
+const hamButton = document.querySelector('.menu')
+const closeBtn = document.querySelector('.hamburger')
+
+
+hamButton.addEventListener('click', ()=>{
+  hamButton.classList.add('hide')
+  closeBtn.classList.add('active')
+})
+
+closeBtn.addEventListener('click', ()=>{
+  hamButton.classList.remove('hide')
+  closeBtn.classList.remove('active')
+})
+  </script>
+   <script src="https://kit.fontawesome.com/5eb97336bc.js" crossorigin="anonymous"></script>
+  </body>
+</html>
