@@ -193,6 +193,9 @@ section{
    flex-wrap: wrap;
    justify-content: space-between;
 }
+.contact p{
+  font-family: 'Courier New', Courier, monospace;
+}
 
 .contact form .input-box input,
 .contact form textarea{
@@ -254,7 +257,6 @@ section{
 }
 .socials{
   display: flexbox;
-
 }
 .footer-iconTop a i{
    font-size: 1.3rem;
