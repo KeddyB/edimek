@@ -100,7 +100,16 @@ a{
   font-weight: 700;
   color: var(--primary-color);
 }
-
+.birthdayContainer{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10%;
+  justify-items: right; 
+}
+.birthImage{
+  width: 250px;
+  border-radius: 5px;
+}
 .content__container p {
   font-size: 1rem;
   color: var(--text-color);
@@ -112,9 +121,10 @@ a{
   align-items: center;
 }
 
+
 .content__container input {
   width: 100%;
-  max-width: 300px;
+  max-width: 900px;
   padding: 1rem;
   font-size: 0.8rem;
   outline: none;
@@ -295,6 +305,7 @@ section{
   .hamburger{
     animation: slideOut 0.5 ease backwards;
   }
+  
   .active{
     position: absolute;
     top: 30px;
@@ -335,11 +346,24 @@ section{
   .content__container {
     text-align: center;
   }
-
-  .content__container form {
-    margin-right: auto;
-    margin-left: auto;
+  .birthdayContainer{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 10%;
+    align-items: center;
+    padding: 1rem;
+    justify-items: center;
   }
+  .birthImage{
+    margin-bottom: 50px;
+  }
+  .content__container input {
+  font-size: 0.8rem;
+  }
+  .container {
+    margin-top: 50px;
+  }
+
   @keyframes slideIn {
   from {
     opacity: 0;
