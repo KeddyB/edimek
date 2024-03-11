@@ -195,13 +195,10 @@ section{
 }
 .contact p{
   font-family: 'Courier New', Courier, monospace;
-<<<<<<< HEAD
   line-height: 1.6rem;
   text-align: justify;
-  margin-bottom: 20px;
-=======
+  margin-bottom: 20px;  
   margin-bottom: 15px;
->>>>>>> 1a38936c7ee25dfc7f2e2367b4de1972c71dbcbc
 }
 
 .contact form .input-box input,
@@ -274,12 +271,9 @@ section{
 .footer-iconTop a:hover{
    box-shadow: 0 0 1rem var(--text-color);
 }
-<<<<<<< HEAD
 .socials{
   text-align: center;
 }
-=======
->>>>>>> 1a38936c7ee25dfc7f2e2367b4de1972c71dbcbc
 .footer-iconTop a i{
    font-size: 1.3rem;
 }
@@ -310,7 +304,7 @@ section{
   left: 50%;
   transform: translate(-50%, -50%) scale(0);
   background-color: white;  
-  box-shadow: 0 0 13px var(--psrimary-color);
+  box-shadow: 0 0 13px var(--primary-color);
   border-radius: 10px;
   padding: 20px;
   z-index: 10;
@@ -318,7 +312,7 @@ section{
   font-family: 'Courier New', Courier, monospace;
   text-align: justify;
 }
-.modal.alive{
+.alive{
   transform: translate(-50%, -50%) scale(1);
   transition: 200ms ease-in-out;
 }

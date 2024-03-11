@@ -114,8 +114,8 @@ closeBtn.addEventListener("click", () => {
 });
 
 //pop up modal
-const popUpBtn = document.getElementById("aliveBtn");
-const modal = document.querySelector("#modal");
+const popUpBtn = document.querySelector(".aliveBtn");
+const modal = document.querySelector(".modal");
 
 popUpBtn.addEventListener("click", (e) => {
   e.preventDefault()
