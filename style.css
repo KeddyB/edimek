@@ -175,7 +175,7 @@ section{
     margin-top: 0;
     color: var(--primary-color);
 }
-.about p{
+ p{
   text-align: justify;
   color: var(--text-color);
   line-height: 24px;
@@ -195,6 +195,7 @@ section{
 }
 .contact p{
   font-family: 'Courier New', Courier, monospace;
+  margin-bottom: 15px;
 }
 
 .contact form .input-box input,
@@ -213,6 +214,18 @@ section{
 }
 .contact form textarea{
    resize: none;
+}
+.socials{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+  margin-top: 50px;
+}
+.socials a{
+  height: 60px;
+  width: 60%;
+  border: 1px solid black;
+  font-size: 1.6rem;
 }
 .btn{
    margin-top: 2rem;
@@ -255,9 +268,6 @@ section{
 .footer-iconTop a:hover{
    box-shadow: 0 0 1rem var(--text-color);
 }
-.socials{
-  display: flexbox;
-}
 .footer-iconTop a i{
    font-size: 1.3rem;
 }
@@ -282,7 +292,62 @@ section{
   display: none;
 }
 
-
+.modal{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  background-color: white;  
+  box-shadow: 0 0 13px var(--psrimary-color);
+  border-radius: 10px;
+  padding: 20px;
+  z-index: 10;
+  max-width: 80%;
+  font-family: 'Courier New', Courier, monospace;
+  text-align: justify;
+}
+.modal.alive{
+  transform: translate(-50%, -50%) scale(1);
+  transition: 200ms ease-in-out;
+}
+.modal-header{
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--primary-color);
+  margin-bottom: 12px;
+}
+.modal-header .close-button{
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background-color: var(--primary-color-dark);
+  height: 30px;
+  width: 30px;
+   border: 1px;
+   border-radius: 7px;
+   font-size: 16px;
+   color: var(--white);
+   font-family: 'Courier New', Courier, monospace;
+}
+.modal-body{
+  padding: 10px 15px;
+}
+/* #overlay{
+  position: fixed;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  pointer-events: none;
+} */
+/* .alive1{
+opacity: 1;
+pointer-events: none;
+} */
 @media (width < 900px) {
   .link a {
     display: none;
@@ -314,13 +379,13 @@ section{
     right: 0;
     display: flex;
     width: 200px;
-    height: 250px;
+    height: 300px;
     border-radius: 5px;
     background-color:var(--secondary-color);
     box-shadow: 0 0 10px var(--primary-color);
     align-items: center;
     text-align: center;
-    animation: slideIn 0.5s ease forwards;
+    animation: slideIn 0.5s ease-in-out;
   }
   .active li{
     width: 160px;
