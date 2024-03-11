@@ -195,6 +195,9 @@ section{
 }
 .contact p{
   font-family: 'Courier New', Courier, monospace;
+  line-height: 1.6rem;
+  text-align: justify;
+  margin-bottom: 20px;
 }
 
 .contact form .input-box input,
@@ -256,7 +259,7 @@ section{
    box-shadow: 0 0 1rem var(--text-color);
 }
 .socials{
-  display: flexbox;
+  text-align: center;
 }
 .footer-iconTop a i{
    font-size: 1.3rem;
