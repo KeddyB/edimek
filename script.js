@@ -115,9 +115,23 @@ closeBtn.addEventListener("click", () => {
 
 //pop up modal
 const popUpBtn = document.querySelector(".aliveBtn");
+const popUpBtn2 = document.querySelector(".aliveButton");
 const modal = document.querySelector(".modal");
+const modalClose = document.querySelector('.close-button')
+const overlay = document.getElementById('overlay')
 
 popUpBtn.addEventListener("click", (e) => {
   e.preventDefault()
   modal.classList.toggle("alive");
+  overlay.classList.add('overlay')
+});
+
+popUpBtn2.addEventListener("click", (e) => {
+  e.preventDefault()
+  modal.classList.add("alive");
+});
+
+modalClose.addEventListener("click", (e) => {
+  e.preventDefault()
+  modal.classList.remove("alive");
 });

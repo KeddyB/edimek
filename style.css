@@ -44,7 +44,7 @@ a{
   list-style: none;
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: .2rem;
 }
 
 .link a {
@@ -340,7 +340,7 @@ section{
 .modal-body{
   padding: 10px 15px;
 }
-/* #overlay{
+#overlay{
   position: fixed;
   opacity: 0;
   top: 0;
@@ -349,11 +349,11 @@ section{
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.3);
   pointer-events: none;
-} */
-/* .alive1{
-opacity: 1;
-pointer-events: none;
-} */
+}
+.overlay{
+  opacity: 1;
+  pointer-events: all;
+}
 @media (width < 900px) {
   .link a {
     display: none;
@@ -385,7 +385,7 @@ pointer-events: none;
     right: 0;
     display: flex;
     width: 200px;
-    height: 300px;
+    height: 350px;
     border-radius: 5px;
     background-color:var(--secondary-color);
     box-shadow: 0 0 10px var(--primary-color);
