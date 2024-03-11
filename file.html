@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet' />
-    <title>Edimek's Blog</title>
+    <title>WISHWELLS</title>
   </head>
   <body>
     <style>
-    	@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 
 :root {
   --primary-color: #5c48ee;
@@ -56,7 +56,7 @@ a{
   list-style: none;
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: .2rem;
 }
 
 .link a {
@@ -112,7 +112,16 @@ a{
   font-weight: 700;
   color: var(--primary-color);
 }
-
+.birthdayContainer{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10%;
+  justify-items: right; 
+}
+.birthImage{
+  width: 250px;
+  border-radius: 5px;
+}
 .content__container p {
   font-size: 1rem;
   color: var(--text-color);
@@ -124,9 +133,10 @@ a{
   align-items: center;
 }
 
+
 .content__container input {
   width: 100%;
-  max-width: 300px;
+  max-width: 900px;
   padding: 1rem;
   font-size: 0.8rem;
   outline: none;
@@ -177,7 +187,7 @@ section{
     margin-top: 0;
     color: var(--primary-color);
 }
-.about p{
+ p{
   text-align: justify;
   color: var(--text-color);
   line-height: 24px;
@@ -194,6 +204,13 @@ section{
    display: flex;
    flex-wrap: wrap;
    justify-content: space-between;
+}
+.contact p{
+  font-family: 'Courier New', Courier, monospace;
+  line-height: 1.6rem;
+  text-align: justify;
+  margin-bottom: 20px;  
+  margin-bottom: 15px;
 }
 
 .contact form .input-box input,
@@ -212,6 +229,18 @@ section{
 }
 .contact form textarea{
    resize: none;
+}
+.socials{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+  margin-top: 50px;
+}
+.socials a{
+  height: 60px;
+  width: 60%;
+  border: 1px solid black;
+  font-size: 1.6rem;
 }
 .btn{
    margin-top: 2rem;
@@ -255,8 +284,7 @@ section{
    box-shadow: 0 0 1rem var(--text-color);
 }
 .socials{
-  display: flexbox;
-
+  text-align: center;
 }
 .footer-iconTop a i{
    font-size: 1.3rem;
@@ -282,7 +310,62 @@ section{
   display: none;
 }
 
-
+.modal{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  background-color: white;  
+  box-shadow: 0 0 13px var(--primary-color);
+  border-radius: 10px;
+  padding: 20px;
+  z-index: 10;
+  max-width: 80%;
+  font-family: 'Courier New', Courier, monospace;
+  text-align: justify;
+}
+.alive{
+  transform: translate(-50%, -50%) scale(1);
+  transition: 200ms ease-in-out;
+}
+.modal-header{
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--primary-color);
+  margin-bottom: 12px;
+}
+.modal-header .close-button{
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background-color: var(--primary-color-dark);
+  height: 30px;
+  width: 30px;
+   border: 1px;
+   border-radius: 7px;
+   font-size: 16px;
+   color: var(--white);
+   font-family: 'Courier New', Courier, monospace;
+}
+.modal-body{
+  padding: 10px 15px;
+}
+#overlay{
+  position: fixed;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  pointer-events: none;
+}
+.overlay{
+  opacity: 1;
+  pointer-events: all;
+}
 @media (width < 900px) {
   .link a {
     display: none;
@@ -307,19 +390,20 @@ section{
   .hamburger{
     animation: slideOut 0.5 ease backwards;
   }
+  
   .active{
     position: absolute;
     top: 30px;
     right: 0;
     display: flex;
     width: 200px;
-    height: 600px;
+    height: 350px;
     border-radius: 5px;
     background-color:var(--secondary-color);
     box-shadow: 0 0 10px var(--primary-color);
     align-items: center;
     text-align: center;
-    animation: slideIn 0.5s ease forwards;
+    animation: slideIn 0.5s ease-in-out;
   }
   .active li{
     width: 160px;
@@ -347,11 +431,24 @@ section{
   .content__container {
     text-align: center;
   }
-
-  .content__container form {
-    margin-right: auto;
-    margin-left: auto;
+  .birthdayContainer{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 10%;
+    align-items: center;
+    padding: 1rem;
+    justify-items: center;
   }
+  .birthImage{
+    margin-bottom: 50px;
+  }
+  .content__container input {
+  font-size: 0.8rem;
+  }
+  .container {
+    margin-top: 50px;
+  }
+
   @keyframes slideIn {
   from {
     opacity: 0;
@@ -363,34 +460,40 @@ section{
   }
 }
 }
+
     </style>
     <nav>
-      <div class="nav__logo" id="nav"><a href="#">Edimek</a></div>
+      <div class="nav__logo" id="nav"><a href="#">Wishwells</a></div>
       <ul class="nav__links">
         <li class="link"><a href="#home">Home</a></li>
         <li class="link"><a href="#about">About</a></li>
         <li class="link"><a href="#contact">Contact</a></li>
-        <li class="link"><a href="#">Blog</a></li>
-        <li class="link"><a href="#" class="nav__btn">Register</a></li>
+        <li class="link aliveBtn"><a href="" >Disclaimer</a></li>
+        <li class="link"><a href="https://www.freeprivacypolicy.com/live/fb15344b-ad82-43fe-9e4e-eb47b92a1c06" target="_blank">Privacy Policy</a></li>
       </ul>
       <button class="menu"><i class="fa-solid fa-bars"></i></button>
       <ul class="hamburger">
         <i class="fa-solid fa-square-xmark"></i>
-        <li class="line"><a href="#home">Home</a></li>
-        <li class="line"><a href="#about">About</a></li>
-        <li class="line"><a href="#contact">Contact</a></li>
-        <li class="line"><a href="#">Blog</a></li>
-        <li class="line"><a href="#" class="nav__btn">Register</a></li>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li class="aliveButton"><a href="">Disclaimer</a></li>
+        <li class=""><a href="https://www.freeprivacypolicy.com/live/fb15344b-ad82-43fe-9e4e-eb47b92a1c06" target="_blank">Privacy Policy</a></li>
+
       </ul>
     </div>
     </nav>
     <section class="container" id="home">
       <div class="content__container">
-        <h1>
-          Wish your loved ones<br />A
-          <span class="heading__1">Wonderful</span><br />
-          <span class="heading__2">Birthday</span>
-        </h1>
+        <div class="birthdayContainer">
+          <h1>
+            Wish your loved ones<br />A
+            <span class="heading__1">Wonderful</span><br />
+            <span class="heading__2">Birthday</span>
+          </h1>
+          <img src="./1710009689836-removebg-preview.png" alt="" class="birthImage">
+        </div>
+        
         <p>
           
         </p>
@@ -403,25 +506,26 @@ section{
     </section>
     <section class="about" id="about">
         <h2 class="heading">About Us</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at justo et ante laoreet luctus...
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus id libero ut metus pharetra accumsan vel nec elit. Integer lacinia ante nec nulla consectetur, ac suscipit risus efficitur. Sed vulputate, dui et vehicula rhoncus, nisi magna hendrerit ex, nec ultrices dolor ligula eget ex. 
+        <p>
+          Welcome to Wishwells, where passion meets words and ideas flow freely. We are a dedicated team of writers, thinkers, and storytellers who believe in the power of words to inspire, inform, and ignite conversations. Our journey began with a shared love for exploring diverse topics and sharing our perspectives with the world. As avid bloggers, we strive to create a space that resonates with our readers, offering a blend of insightful content, engaging narratives, and thought-provoking discussions.
 
-Fusce nec commodo justo, nec pharetra magna. Nullam sed urna leo. Curabitur id suscipit est. Maecenas tempus lectus non libero interdum, ac molestie enim iaculis. Proin rutrum sollicitudin sapien, eu tristique magna scelerisque ut. Cras vel turpis sed velit iaculis aliquam.
-
-Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Ut auctor, nunc a finibus consectetur, risus felis sollicitudin odio, nec consequat velit libero ac purus. Mauris ac turpis vitae libero interdum faucibus. Suspendisse vel ultrices nunc, in molestie felis. Nulla quis purus vitae felis suscipit iaculis vel vel dui.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus id libero ut metus pharetra accumsan vel nec elit. Integer lacinia ante nec nulla consectetur, ac suscipit risus efficitur. Sed vulputate, dui et vehicula rhoncus, nisi magna hendrerit ex, nec ultrices dolor ligula eget ex. 
-
-Fusce nec commodo justo, nec pharetra magna. Nullam sed urna leo. Curabitur id suscipit est. Maecenas tempus lectus non libero interdum, ac molestie enim iaculis. Proin rutrum sollicitudin sapien, eu tristique magna scelerisque ut. Cras vel turpis sed velit iaculis aliquam.
-
-Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Ut auctor, nunc a finibus consectetur, risus felis sollicitudin odio, nec consequat velit libero ac purus. Mauris ac turpis vitae libero interdum faucibus. Suspendisse vel ultrices nunc, in molestie felis. Nulla quis purus vitae felis suscipit iaculis vel vel dui.
-
+<br>At Wishwells, we are committed to providing a rich and diverse tapestry of articles that cater to a wide range of interests. From lifestyle and travel to technology and personal development, we delve into the realms of the everyday and the extraordinary. Our goal is to create a community where readers can find inspiration, knowledge, and a sense of connection. Join us on this exciting adventure as we embark on a journey of discovery, exploration, and shared experiences. Your story is our story, and together, we can make every word count.
         </p>
     </section>
 
     <section class="contact" id="contact">
       <h2 class="heading">Contact <span>Us</span></h2>
-      <form action="#">
+      <p class="contact-p">
+        "Ready to learn more? Visit our blog for in-depth analysis and helpful tips. Our blog is a treasure trove of valuable information, where we delve into topics that matter to you. Whether you're seeking expert advice on industry trends, looking for practical tips to enhance your skills, or simply craving thought-provoking insights, our blog has something for everyone. With detailed analysis and actionable recommendations, our articles aim to empower you on your journey towards success. Explore our blog today and unlock a wealth of knowledge that will fuel your growth and inspire your next steps." You can check out out social media pages and contact us for more information
+      </p>
+      <span>Contact Email: edimekeminimoh@gmail.com</span><br>
+      <div class="socials">
+          <a href=""><i class="fa-brands fa-x-twitter"></i></a>
+          <a href=""><i class="fa-brands fa-facebook"></i></a>
+          <a href=""><i class="fa-brands fa-whatsapp"></i></a>
+          <a class="insta" href=""><i class="fa-brands fa-instagram"></i></a>
+        </div>
+      <form action="https://formsubmit.co/bokelusi@email.com" method="POST">
          <div class="input-box">
             <input type="text" placeholder="Full Name">
             <input type="email" placeholder="Email Address">
@@ -434,139 +538,169 @@ Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac tu
          <input type="submit" value="Send Message" class="btn">
       </form>
    </section>
+   <div id="modal" class="modal">
+    <div class="modal-header">
+      <div class="title">Disclaimer</div>
+      <button class="close-button">&times;</button>
+    </div>
+    <div class="modal-body">
+
+The information provided on this website is for general informational purposes only. While we strive to keep the information up to date and correct, we make no representations or warranties of any kind, express or implied, about the completeness, accuracy, reliability, suitability, or availability with respect to the website or the information, products, services, or related graphics contained on the website for any purpose. Any reliance you place on such information is therefore strictly at your own risk. In no event will we be liable for any loss or damage including without limitation, indirect or consequential loss or damage, or any loss or damage whatsoever arising from loss of data or profits
+    </div>
+   </div>
+   <div id="overlay" class="overlay"></div>
 
     <footer class="footer">
       <div class="footer-container">
         <div class="footer-text">
          <p>Copyright &copy; 2024 Edimek | All Rights Reserved.</p>
       </div>
-      <div class="socials">
-          <a href=""><i class="fa-brands fa-x-twitter"></i></a>
-          <a href=""><i class="fa-brands fa-facebook"></i></a>
-          <a href=""><i class="fa-brands fa-whatsapp"></i></a>
-          <a class="insta" href=""><i class="fa-brands fa-instagram"></i></a>
-        </div>
+      
       <div class="footer-iconTop">
         <a href="#nav"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAANtJREFUSEvtlEEKwjAQRV/PoaDoMVTwEB7BjWtP4sadW+8h4i0UFBS9RXVgAiEkzQQsCDWrljD//fyftqLlVbWsT/cAA430Zo22JKI+cFThGXC3QKwAJz5U0StgglgAobgzboLkACJ+AEaACPonkOcLMAVeqbiaAL5zKXXi5S57J0BKP2tcUUgKEBN/ALU6lbmeBZICrICtupsDIi7LB8i7QCTC8ed0S2AXRtUU0RrYA09vKAQ4yALYxHrIlRzOxACNn8MfkP1b/FxEWccl17RY7BvXtBha2kEHAW8WqCoZLgVpRgAAAABJRU5ErkJggg=="/></a>
       </div>
       </div> 
    </footer>
    <script>
-  	//smooth scrolling
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-   anchor.addEventListener('click', function (e) {
-     e.preventDefault();
- 
-     document.querySelector(this.getAttribute('href')).scrollIntoView({
-       behavior: 'smooth'
-     });
-   });
- });
+    //smooth scrolling
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  anchor.addEventListener("click", function (e) {
+    e.preventDefault();
+
+    document.querySelector(this.getAttribute("href")).scrollIntoView({
+      behavior: "smooth",
+    });
+  });
+});
 
 //array of birthday wishes
 const birthdayWishes = [
-    "Wishing you a day filled with love, joy, and all the happiness you deserve on your special day.",
-    "May your birthday be as beautiful and special as you are to me. Happy birthday!",
-    "On your birthday, I wish you abundant happiness and love. May all your dreams become a reality. Happy birthday!",
-    "Sending you warm wishes and lots of love on your birthday. May you have a fantastic day!",
-    "Happy birthday to someone who brings so much joy and positivity into the lives of others. Have a wonderful day!",
-    "May your birthday be the start of a year filled with good luck, good health, and much happiness. Happy birthday!",
-    "Wishing you a day filled with love, laughter, and cherished moments. Happy birthday!",
-    "Sending you heartfelt wishes for a birthday that's as special as you are. Happy birthday!",
-    "On your special day, I want you to know how much you mean to me. Happy birthday, my dear friend!",
-    "May your birthday be as bright and beautiful as you are. Happy birthday!",
-    "Wishing you all the best on your birthday and throughout the year. Have a fantastic day!",
-    "Sending you warm hugs and best wishes on your birthday. May it be a day full of joy and celebration!",
-    "Happy birthday! May your day be filled with laughter, love, and unforgettable memories.",
-    "Wishing you a day filled with laughter, love, and happiness. Happy birthday!",
-    "May your birthday be filled with everything you love and more. Have a fantastic day!",
-    "Happy birthday! May this year bring you all the happiness and success you deserve.",
-    "Sending you heartfelt wishes on your birthday. May it be a day full of joy and blessings.",
-    "On your birthday, I wish you endless happiness, love, and unforgettable moments. Happy birthday!",
-    "Wishing you a birthday that's just as amazing as you are. Have a fantastic day!",
-    "Happy birthday to someone who fills my life with love and laughter. Have a wonderful day!",
-    "May your birthday be filled with laughter, love, and cherished memories. Happy birthday!",
-    "Wishing you a day full of joy, laughter, and love on your special day. Happy birthday!",
-    "Happy birthday! May your day be filled with happiness, love, and all the things that bring you joy.",
-    "Sending you warm wishes and heartfelt greetings on your birthday. Have a fantastic day!",
-    "On your special day, I want you to know how much you mean to me. Happy birthday!",
-    "May your birthday be as special and beautiful as you are to me. Happy birthday!",
-    "Wishing you all the happiness and love in the world on your birthday. Have a fantastic day!",
-    "Happy birthday! May your day be filled with laughter, joy, and lots of love.",
-    "Sending you warm wishes and lots of love on your birthday. May it be a day full of joy and celebration!",
-    "Wishing you a birthday that's as beautiful and special as you are. Happy birthday!",
-    "On your birthday, I want you to know how much you mean to me. Happy birthday!",
-    "May your birthday be filled with happiness, love, and all the things you enjoy the most. Happy birthday!",
-    "Sending you warm wishes and heartfelt greetings on your special day. Have a fantastic birthday!",
-    "Happy birthday! May this year bring you all the happiness and success you deserve.",
-    "Wishing you a day filled with love, laughter, and cherished moments. Happy birthday!",
-    "On your special day, I want you to know how much you mean to me. Happy birthday, my dear friend!",
-    "May your birthday be as bright and beautiful as you are. Happy birthday!",
-    "Wishing you all the best on your birthday and throughout the year. Have a fantastic day!",
-    "Happy birthday! May your day be filled with laughter, love, and unforgettable memories.",
-    "Wishing you a day filled with joy, laughter, and love on your special day. Happy birthday!",
-    "May your birthday be filled with everything you love and more. Have a fantastic day!",
-    "Happy birthday to someone who fills my life with love and laughter. Have a wonderful day!",
-    "Wishing you a birthday that's just as amazing as you are. Have a fantastic day!",
-    "Happy birthday! May this year bring you all the happiness and success you deserve.",
-    "Sending you warm wishes and heartfelt greetings on your birthday. Have a fantastic day!",
-    "On your special day, I want you to know how much you mean to me. Happy birthday!",
-    "May your birthday be as special and beautiful as you are to me. Happy birthday!",
-    "Wishing you all the happiness and love in the world on your birthday. Have a fantastic day!",
-    "Happy birthday! May your day be filled with laughter, joy, and lots of love.",
-    "Sending you warm wishes and lots of love on your birthday. May it be a day full of joy and celebration!",
-    "Wishing you a birthday that's as beautiful and special as you are. Happy birthday!",
-    "On your birthday, I want you to know how much you mean to me. Happy birthday!",
-    "May your birthday be filled with happiness, love, and all the things you enjoy the most. Happy birthday!",
-    "Sending you warm wishes and heartfelt greetings on your special day. Have a fantastic birthday!",
+  "Wishing you a day filled with love, joy, and all the happiness you deserve on your special day.",
+  "May your birthday be as beautiful and special as you are to me. Happy birthday!",
+  "On your birthday, I wish you abundant happiness and love. May all your dreams become a reality. Happy birthday!",
+  "Sending you warm wishes and lots of love on your birthday. May you have a fantastic day!",
+  "Happy birthday to someone who brings so much joy and positivity into the lives of others. Have a wonderful day!",
+  "May your birthday be the start of a year filled with good luck, good health, and much happiness. Happy birthday!",
+  "Wishing you a day filled with love, laughter, and cherished moments. Happy birthday!",
+  "Sending you heartfelt wishes for a birthday that's as special as you are. Happy birthday!",
+  "On your special day, I want you to know how much you mean to me. Happy birthday, my dear friend!",
+  "May your birthday be as bright and beautiful as you are. Happy birthday!",
+  "Wishing you all the best on your birthday and throughout the year. Have a fantastic day!",
+  "Sending you warm hugs and best wishes on your birthday. May it be a day full of joy and celebration!",
+  "Happy birthday! May your day be filled with laughter, love, and unforgettable memories.",
+  "Wishing you a day filled with laughter, love, and happiness. Happy birthday!",
+  "May your birthday be filled with everything you love and more. Have a fantastic day!",
+  "Happy birthday! May this year bring you all the happiness and success you deserve.",
+  "Sending you heartfelt wishes on your birthday. May it be a day full of joy and blessings.",
+  "On your birthday, I wish you endless happiness, love, and unforgettable moments. Happy birthday!",
+  "Wishing you a birthday that's just as amazing as you are. Have a fantastic day!",
+  "Happy birthday to someone who fills my life with love and laughter. Have a wonderful day!",
+  "May your birthday be filled with laughter, love, and cherished memories. Happy birthday!",
+  "Wishing you a day full of joy, laughter, and love on your special day. Happy birthday!",
+  "Happy birthday! May your day be filled with happiness, love, and all the things that bring you joy.",
+  "Sending you warm wishes and heartfelt greetings on your birthday. Have a fantastic day!",
+  "On your special day, I want you to know how much you mean to me. Happy birthday!",
+  "May your birthday be as special and beautiful as you are to me. Happy birthday!",
+  "Wishing you all the happiness and love in the world on your birthday. Have a fantastic day!",
+  "Happy birthday! May your day be filled with laughter, joy, and lots of love.",
+  "Sending you warm wishes and lots of love on your birthday. May it be a day full of joy and celebration!",
+  "Wishing you a birthday that's as beautiful and special as you are. Happy birthday!",
+  "On your birthday, I want you to know how much you mean to me. Happy birthday!",
+  "May your birthday be filled with happiness, love, and all the things you enjoy the most. Happy birthday!",
+  "Sending you warm wishes and heartfelt greetings on your special day. Have a fantastic birthday!",
+  "Happy birthday! May this year bring you all the happiness and success you deserve.",
+  "Wishing you a day filled with love, laughter, and cherished moments. Happy birthday!",
+  "On your special day, I want you to know how much you mean to me. Happy birthday, my dear friend!",
+  "May your birthday be as bright and beautiful as you are. Happy birthday!",
+  "Wishing you all the best on your birthday and throughout the year. Have a fantastic day!",
+  "Happy birthday! May your day be filled with laughter, love, and unforgettable memories.",
+  "Wishing you a day filled with joy, laughter, and love on your special day. Happy birthday!",
+  "May your birthday be filled with everything you love and more. Have a fantastic day!",
+  "Happy birthday to someone who fills my life with love and laughter. Have a wonderful day!",
+  "Wishing you a birthday that's just as amazing as you are. Have a fantastic day!",
+  "Happy birthday! May this year bring you all the happiness and success you deserve.",
+  "Sending you warm wishes and heartfelt greetings on your birthday. Have a fantastic day!",
+  "On your special day, I want you to know how much you mean to me. Happy birthday!",
+  "May your birthday be as special and beautiful as you are to me. Happy birthday!",
+  "Wishing you all the happiness and love in the world on your birthday. Have a fantastic day!",
+  "Happy birthday! May your day be filled with laughter, joy, and lots of love.",
+  "Sending you warm wishes and lots of love on your birthday. May it be a day full of joy and celebration!",
+  "Wishing you a birthday that's as beautiful and special as you are. Happy birthday!",
+  "On your birthday, I want you to know how much you mean to me. Happy birthday!",
+  "May your birthday be filled with happiness, love, and all the things you enjoy the most. Happy birthday!",
+  "Sending you warm wishes and heartfelt greetings on your special day. Have a fantastic birthday!",
 ];
 
-
 //button for generating birthday wishes
-const form = document.getElementById('generateButton').addEventListener('click', function(event){
-    event.preventDefault()
+const form = document
+  .getElementById("generateButton")
+  .addEventListener("click", function (event) {
+    event.preventDefault();
 
-    const birthdayWishPos = Math.floor(Math.random() * birthdayWishes.length)
+    const birthdayWishPos = Math.floor(Math.random() * birthdayWishes.length);
 
-    const wish = birthdayWishes[birthdayWishPos]
-    const textarea = document.getElementById('wish')
+    const wish = birthdayWishes[birthdayWishPos];
+    const textarea = document.getElementById("wish");
 
-    textarea.value = wish
-})
+    textarea.value = wish;
+  });
 
 //button to copy the generated wishes
-document.getElementById('copyBtn').addEventListener('click', async(e)=>{
-  e.preventDefault()
-  const textarea = document.getElementById('wish')
-  const button = document.getElementById('copyBtn')
+document.getElementById("copyBtn").addEventListener("click", async (e) => {
+  e.preventDefault();
+  const textarea = document.getElementById("wish");
+  const button = document.getElementById("copyBtn");
   try {
-    await navigator.clipboard.writeText(textarea.value)
-    button.innerHTML = "Copied"
+    await navigator.clipboard.writeText(textarea.value);
+    button.innerHTML = "Copied";
 
-    setTimeout(() =>{
-      getSelection().removeAllRanges()
-      button.innerHTML = 'Copy'
-    }, 2000)
+    setTimeout(() => {
+      getSelection().removeAllRanges();
+      button.innerHTML = "Copy";
+    }, 2000);
   } catch (error) {
-    alert('error')
+    alert("error");
   }
-})
+});
 
 //hamburger menu
-const hamButton = document.querySelector('.menu')
-const closeBtn = document.querySelector('.hamburger')
+const hamButton = document.querySelector(".menu");
+const closeBtn = document.querySelector(".hamburger");
 
+hamButton.addEventListener("click", () => {
+  hamButton.classList.add("hide");
+  closeBtn.classList.add("active");
+});
 
-hamButton.addEventListener('click', ()=>{
-  hamButton.classList.add('hide')
-  closeBtn.classList.add('active')
-})
+closeBtn.addEventListener("click", () => {
+  hamButton.classList.remove("hide");
+  closeBtn.classList.remove("active");
+});
 
-closeBtn.addEventListener('click', ()=>{
-  hamButton.classList.remove('hide')
-  closeBtn.classList.remove('active')
-})
-  </script>
+//pop up modal
+const popUpBtn = document.querySelector(".aliveBtn");
+const popUpBtn2 = document.querySelector(".aliveButton");
+const modal = document.querySelector(".modal");
+const modalClose = document.querySelector('.close-button')
+const overlay = document.getElementById('overlay')
+
+popUpBtn.addEventListener("click", (e) => {
+  e.preventDefault()
+  modal.classList.toggle("alive");
+  overlay.classList.add('overlay')
+});
+
+popUpBtn2.addEventListener("click", (e) => {
+  e.preventDefault()
+  modal.classList.add("alive");
+});
+
+modalClose.addEventListener("click", (e) => {
+  e.preventDefault()
+  modal.classList.remove("alive");
+});
+
+   </script>
    <script src="https://kit.fontawesome.com/5eb97336bc.js" crossorigin="anonymous"></script>
   </body>
 </html>
