@@ -6,22 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet' />
-    <title>Edimek's Blog</title>
+    <title>WISHWELLS</title>
   </head>
   <body>
     <nav>
-      <div class="nav__logo" id="nav"><a href="#">Edimek</a></div>
+      <div class="nav__logo" id="nav"><a href="#">Wishwells</a></div>
       <ul class="nav__links">
         <li class="link"><a href="#home">Home</a></li>
         <li class="link"><a href="#about">About</a></li>
         <li class="link"><a href="#contact">Contact</a></li>
+        <li class="link"><a href="" id="aliveBtn">Privacy Policy</a></li>
       </ul>
       <button class="menu"><i class="fa-solid fa-bars"></i></button>
       <ul class="hamburger">
         <i class="fa-solid fa-square-xmark"></i>
-        <li class="line"><a href="#home">Home</a></li>
-        <li class="line"><a href="#about">About</a></li>
-        <li class="line"><a href="#contact">Contact</a></li>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="" id="aliveBtn">Privacy Policy</a></li>
       </ul>
     </div>
     </nav>
@@ -48,28 +50,19 @@
     </section>
     <section class="about" id="about">
         <h2 class="heading">About Us</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at justo et ante laoreet luctus...
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus id libero ut metus pharetra accumsan vel nec elit. Integer lacinia ante nec nulla consectetur, ac suscipit risus efficitur. Sed vulputate, dui et vehicula rhoncus, nisi magna hendrerit ex, nec ultrices dolor ligula eget ex. 
+        <p>
+          Welcome to Wishwells, where passion meets words and ideas flow freely. We are a dedicated team of writers, thinkers, and storytellers who believe in the power of words to inspire, inform, and ignite conversations. Our journey began with a shared love for exploring diverse topics and sharing our perspectives with the world. As avid bloggers, we strive to create a space that resonates with our readers, offering a blend of insightful content, engaging narratives, and thought-provoking discussions.
 
-Fusce nec commodo justo, nec pharetra magna. Nullam sed urna leo. Curabitur id suscipit est. Maecenas tempus lectus non libero interdum, ac molestie enim iaculis. Proin rutrum sollicitudin sapien, eu tristique magna scelerisque ut. Cras vel turpis sed velit iaculis aliquam.
-
-Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Ut auctor, nunc a finibus consectetur, risus felis sollicitudin odio, nec consequat velit libero ac purus. Mauris ac turpis vitae libero interdum faucibus. Suspendisse vel ultrices nunc, in molestie felis. Nulla quis purus vitae felis suscipit iaculis vel vel dui.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus id libero ut metus pharetra accumsan vel nec elit. Integer lacinia ante nec nulla consectetur, ac suscipit risus efficitur. Sed vulputate, dui et vehicula rhoncus, nisi magna hendrerit ex, nec ultrices dolor ligula eget ex. 
-
-Fusce nec commodo justo, nec pharetra magna. Nullam sed urna leo. Curabitur id suscipit est. Maecenas tempus lectus non libero interdum, ac molestie enim iaculis. Proin rutrum sollicitudin sapien, eu tristique magna scelerisque ut. Cras vel turpis sed velit iaculis aliquam.
-
-Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Ut auctor, nunc a finibus consectetur, risus felis sollicitudin odio, nec consequat velit libero ac purus. Mauris ac turpis vitae libero interdum faucibus. Suspendisse vel ultrices nunc, in molestie felis. Nulla quis purus vitae felis suscipit iaculis vel vel dui.
-
+<br>At Wishwells, we are committed to providing a rich and diverse tapestry of articles that cater to a wide range of interests. From lifestyle and travel to technology and personal development, we delve into the realms of the everyday and the extraordinary. Our goal is to create a community where readers can find inspiration, knowledge, and a sense of connection. Join us on this exciting adventure as we embark on a journey of discovery, exploration, and shared experiences. Your story is our story, and together, we can make every word count.
         </p>
     </section>
 
     <section class="contact" id="contact">
       <h2 class="heading">Contact <span>Us</span></h2>
-      <p>
+      <p class="contact-p">
         "Ready to learn more? Visit our blog for in-depth analysis and helpful tips. Our blog is a treasure trove of valuable information, where we delve into topics that matter to you. Whether you're seeking expert advice on industry trends, looking for practical tips to enhance your skills, or simply craving thought-provoking insights, our blog has something for everyone. With detailed analysis and actionable recommendations, our articles aim to empower you on your journey towards success. Explore our blog today and unlock a wealth of knowledge that will fuel your growth and inspire your next steps." You can check out out social media pages and contact us for more information
       </p>
-      <span>Contact Email: edimek@gmail.com</span>
+      <span>Contact Email: edimek@gmail.com</span><br>
       <div class="socials">
           <a href=""><i class="fa-brands fa-x-twitter"></i></a>
           <a href=""><i class="fa-brands fa-facebook"></i></a>
@@ -89,6 +82,14 @@ Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac tu
          <input type="submit" value="Send Message" class="btn">
       </form>
    </section>
+   <div id="modal" class="modal alive">
+    <div class="modal-header">
+      <div class="title">Privacy Policy</div>
+      <button class="close-button">&times;</button>
+    </div>
+    <div class="modal-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum ipsam repellat commodi rerum possimus? Corrupti odio suscipit quod vel rerum ad consequuntur aliquid. Optio velit nobis obcaecati quam culpa dolorum molestiae pariatur tempora. Reiciendis quos sed repudiandae aliquid veniam possimus cupiditate, ducimus adipisci eveniet quo? Eligendi aperiam ipsa commodi dolores ducimus laboriosam dicta, unde nobis nesciunt libero laborum velit quibusdam delectus saepe excepturi rem facilis quaerat quasi, recusandae exercitationem sunt minus corporis. Veritatis neque ipsa facilis necessitatibus minus. Cumque, maiores.</div>
+   </div>
+   <div id="overlay"></div>
 
     <footer class="footer">
       <div class="footer-container">
