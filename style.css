@@ -412,7 +412,12 @@ section{
     padding: 10px;
     font-size: 30px;
   }
-  .container {
+.modal{
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    font-size: 0.8rem;
+  }  .container {
     grid-template-columns: repeat(1, 1fr);
   }
 
@@ -436,6 +441,7 @@ section{
   .container {
     margin-top: 50px;
   }
+  
 
   @keyframes slideIn {
   from {
