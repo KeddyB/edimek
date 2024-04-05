@@ -354,6 +354,30 @@ section{
   opacity: 1;
   pointer-events: all;
 }
+ul{
+  list-style-type: none;
+}
+section{
+  max-width: var(--max-width);
+  padding: 1rem;
+  margin: auto;
+  align-items: center;
+
+}
+.eachItem li{
+    border: 1px solid #5c48ee;
+    padding: 1rem;
+    margin: auto;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+li img{
+  max-width: 50px;
+}
+h1{
+  
+}
 @media (width < 900px) {
   .link a {
     display: none;
@@ -416,7 +440,8 @@ section{
     padding: 0;
     margin: 0;
     font-size: 0.8rem;
-  }  .container {
+  }  
+  .container {
     grid-template-columns: repeat(1, 1fr);
   }
 
