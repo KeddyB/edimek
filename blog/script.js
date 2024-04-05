@@ -25,6 +25,9 @@ let QUERY = encodeURIComponent(`*[_type == "post"]{
       url
     }
   },
+  slug{
+    current
+  }
 }`)
 let URL = `https://${PROJECT_ID}.api.sanity.io/v2022-03-07/data/query/${DATASET_NAME}?query=${QUERY}`
 
@@ -34,15 +37,25 @@ fetch(URL)
   let loading = document.querySelector('.loading')
   loading.parentNode.removeChild(loading)
 
-  let blogs = document.querySelector('.eachItem')
+  let blogs = document.querySelector('.items')
   if(result.length > 0){
     result.forEach(blog => {
       let imgUrl = `${blog.mainImage.asset.url}`
-      let item = document.createElement("li")
+      let item = document.createElement("div")
+      let a = document.createElement("a")
+      let p = document.createElement("p")
+      let para = document.createElement("p") 
       let img = document.createElement('img')
+      
+      a.href =`/blog/${blog.slug.current}`
+      item.classList.add("blogCont")
       img.src = imgUrl
-      item.textContent = `${blog.title} by ${blog.author.name}`
+      a.textContent = `Title: ${blog.title}`
+      p.textContent = `Author: ${blog.author.name}`
       item.appendChild(img)
+      item.appendChild(a)
+      item.appendChild(para)
+      item.appendChild(p)
       blogs.appendChild(item)
     })
   }
