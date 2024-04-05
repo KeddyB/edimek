@@ -365,18 +365,22 @@ section{
 
 }
 .eachItem li{
-    border: 1px solid #5c48ee;
-    padding: 1rem;
-    margin: auto;
-    border-radius: 5px;
-    text-decoration: none;
-    margin-bottom: 10px;
+  border: 1px solid #5c48ee;
+  padding: 1rem;
+  margin: auto;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-bottom: 10px;
+  justify-content: end;
+
 }
 li img{
-  max-width: 50px;
+  height: 60px;
 }
 h1{
-  
+  margin-bottom: 1rem;
+  font-weight: 100;
+  color: #5c48ee;
 }
 @media (width < 900px) {
   .link a {
