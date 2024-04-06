@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Template Example</title>
+</head>
+<body>
+    <div id="blogLinks">
+        <!-- Blog links will be dynamically generated here -->
+    </div>
+
+    <script>
+        // Define blog data (you can replace this with your actual data)
+        const blogs = [
+            { id: 1, title: 'Post 1', author: 'John Doe', content: 'Content of Post 1.' },
+            { id: 2, title: 'Post 2', author: 'Jane Smith', content: 'Content of Post 2.' },
+            // Add more blog objects here
+        ];
+
+        // Function to generate blog links and handle click events
+        function generateBlogLinks() {
+            const blogLinksContainer = document.getElementById('blogLinks');
+
+            blogs.forEach(blog => {
+                const link = document.createElement('a');
+                link.href = `blog.html?id=${blog.id}`; // Link to the blog page with its ID
+                link.textContent = blog.title;
+                link.addEventListener('click', function(event) {
+                    event.preventDefault(); // Prevent default link behavior (navigation)
+                    renderContent(blog);
+                });
+                blogLinksContainer.appendChild(link);
+                blogLinksContainer.appendChild(document.createElement('br')); // Add line break for readability
+            });
+        }
+
+        // Function to render blog content
+        function renderContent(blog) {
+            const content = `
+                <h1>${blog.title}</h1>
+                <p>${blog.content}</p>
+                <p>Author: ${blog.author}</p>
+            `;
+
+            // Open a new window with dynamically generated content
+            let newWindow = window.open('');
+            newWindow.document.write(content);
+        }
+
+        // Generate blog links when the page loads
+        document.addEventListener('DOMContentLoaded', generateBlogLinks);
+    </script>
+</body>
+</html>

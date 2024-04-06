@@ -47,16 +47,26 @@ fetch(URL)
       let para = document.createElement("p") 
       let img = document.createElement('img')
       
-      a.href =`/blog/${blog.slug.current}`
+      a.href = `/blog/${blog.slug.current}`
       item.classList.add("blogCont")
       img.src = imgUrl
-      a.textContent = `Title: ${blog.title}`
-      p.textContent = `Author: ${blog.author.name}`
+      a.innerHTML = `Title: ${blog.title}`
+      p.innerHTML = `Author: ${blog.author.name}`
       item.appendChild(img)
       item.appendChild(a)
       item.appendChild(para)
       item.appendChild(p)
       blogs.appendChild(item)
+
+      const handleLocatiion = async () => {
+        const path = window.location.pathname
+      }
+
+      item.addEventListener("click", ()=>{
+
+      })
+      
+      
     })
   }
 })
