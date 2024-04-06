@@ -3,7 +3,7 @@ const slug = urlParams.get('slug');
 
 let PROJECT_ID = "tpxc7pf3"
 let DATASET_NAME = "production"
-let QUERY = encodeURIComponent(`*[_type == "post" && slug.current ="${slug}"]{
+let QUERY = encodeURIComponent(`*[_type == "post" && slug.current =="${slug}"]{
   title,
   author->{
     name
@@ -16,9 +16,7 @@ let QUERY = encodeURIComponent(`*[_type == "post" && slug.current ="${slug}"]{
   },
 }`)
 let URL = `https://${PROJECT_ID}.api.sanity.io/v2022-03-07/data/query/${DATASET_NAME}?query=${QUERY}`
-      
 
-console.log(slug)
 fetch(URL)
   .then(response => response.json())
   .then(data => {

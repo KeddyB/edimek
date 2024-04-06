@@ -53,7 +53,6 @@ fetch(URL)
   let blogs = document.querySelector('.items')
   if(result.length > 0){
     result.forEach(blog => {
-
       let imgUrl = `${blog.mainImage.asset.url}`
       let item = document.createElement("div")
       let a = document.createElement("a")
@@ -78,8 +77,6 @@ fetch(URL)
       })
 
       const blogPage = document.querySelector('.mainBlog')
-      
     })
   }
 })
-
