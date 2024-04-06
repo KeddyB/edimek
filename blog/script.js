@@ -1,3 +1,16 @@
+//scroll into scrollIntoView
+//smooth scrolling
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  anchor.addEventListener("click", function (e) {
+    e.preventDefault();
+
+    document.querySelector(this.getAttribute("href")).scrollIntoView({
+      behavior: "smooth",
+    });
+  });
+});
+
+
 const hamButton = document.querySelector(".menu");
 const closeBtn = document.querySelector(".hamburger");
 
@@ -19,7 +32,7 @@ let QUERY = encodeURIComponent(`*[_type == "post"]{
   author->{
     name
   },
-  publishedAt,
+  _updatedAt,
   mainImage{
     asset->{
       url
@@ -40,6 +53,7 @@ fetch(URL)
   let blogs = document.querySelector('.items')
   if(result.length > 0){
     result.forEach(blog => {
+
       let imgUrl = `${blog.mainImage.asset.url}`
       let item = document.createElement("div")
       let a = document.createElement("a")
@@ -47,26 +61,25 @@ fetch(URL)
       let para = document.createElement("p") 
       let img = document.createElement('img')
       
-      a.href = `/blog/${blog.slug.current}`
+      a.href = `/blog/pages/index.html?slug=${blog.slug.current}`
       item.classList.add("blogCont")
       img.src = imgUrl
-      a.innerHTML = `Title: ${blog.title}`
+      a.innerHTML = `${blog.title}`
       p.innerHTML = `Author: ${blog.author.name}`
+      para.innerHTML = `Updated: ${blog._updatedAt}`
       item.appendChild(img)
       item.appendChild(a)
       item.appendChild(para)
       item.appendChild(p)
       blogs.appendChild(item)
 
-      const handleLocatiion = async () => {
-        const path = window.location.pathname
-      }
-
       item.addEventListener("click", ()=>{
-
+        window.location.href = `/blog/pages/index.html?slug=${blog.slug.current}`
       })
-      
+
+      const blogPage = document.querySelector('.mainBlog')
       
     })
   }
 })
+
