@@ -239,14 +239,14 @@ section{
   background: var(--primary-color);
 }
 .footer-container{
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
-   flex-wrap: wrap;
-   padding: 1rem;
-   margin: auto;
-   background: var(--primary-color);
-   max-width: var(--max-width);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 1rem;
+  margin: auto;
+  background: var(--primary-color);
+  max-width: var(--max-width);
 }
 .footer p{
    font-size: 1rem;
