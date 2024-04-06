@@ -367,6 +367,11 @@ section{
   margin-bottom: 2rem;
   padding: 1rem;
   justify-content: space-between;
+  box-shadow: 0 0 1rem rgb(82, 74, 82)
+}
+.blogCont:hover{
+  background-color: rgb(124, 101, 206);
+  box-shadow: 0 0 1rem #5c48ee
 }
 .eachItem a{
   text-decoration: none;
