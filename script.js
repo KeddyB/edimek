@@ -135,3 +135,9 @@ modalClose.addEventListener("click", (e) => {
   e.preventDefault()
   modal.classList.remove("alive");
 });
+
+function getCurrentYear() {
+  return new Date().getFullYear();
+}
+
+document.querySelector(".year").innerHTML =`${getCurrentYear()}`

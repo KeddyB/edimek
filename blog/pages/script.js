@@ -1,3 +1,15 @@
+//smooth scrolling
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  anchor.addEventListener("click", function (e) {
+    e.preventDefault();
+
+    document.querySelector(this.getAttribute("href")).scrollIntoView({
+      behavior: "smooth",
+    });
+  });
+});
+
+// sanity backend
 const urlParams = new URLSearchParams(window.location.search);
 const slug = urlParams.get('slug');
 
@@ -43,3 +55,10 @@ fetch(URL)
       console.error('Error fetching blog post:', error);
       // Optionally display an error message or handle the error in another way
   })
+
+//current year on footer
+function getCurrentYear() {
+  return new Date().getFullYear();
+}
+
+document.querySelector(".year").innerHTML =`${getCurrentYear()}`

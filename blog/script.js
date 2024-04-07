@@ -10,7 +10,7 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   });
 });
 
-
+//navbar
 const hamButton = document.querySelector(".menu");
 const closeBtn = document.querySelector(".hamburger");
 
@@ -80,3 +80,10 @@ fetch(URL)
     })
   }
 })
+
+//current year on footer
+function getCurrentYear() {
+  return new Date().getFullYear();
+}
+
+document.querySelector(".year").innerHTML =`${getCurrentYear()}`

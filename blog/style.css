@@ -530,5 +530,7 @@ h1{
   .items{
     grid-template-columns: repeat(1, 1fr);
   }
-  .post
+  .postImage{
+    width: 500px;
+  }
 }
