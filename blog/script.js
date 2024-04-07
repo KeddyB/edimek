@@ -27,7 +27,7 @@ closeBtn.addEventListener("click", () => {
 //setting up sanity for backend
 let PROJECT_ID = "tpxc7pf3"
 let DATASET_NAME = "production"
-let QUERY = encodeURIComponent(`*[_type == "post"]{
+let QUERY = encodeURIComponent(`*[_type == "post"] | order(_createdAt desc){
   title,
   author->{
     name

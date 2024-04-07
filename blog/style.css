@@ -400,6 +400,7 @@ h1{
   margin-top: 2rem;
 }
 .postText{
+  text-indent: 35px;
   margin-top: 2rem;
   text-align: justify;
   font-family: 'Courier New', Courier, monospace;
@@ -513,7 +514,9 @@ h1{
   .container {
     margin-top: 50px;
   }
-  
+  .postImage{
+    width: 500px;
+  }
 
   @keyframes slideIn {
   from {
@@ -531,6 +534,6 @@ h1{
     grid-template-columns: repeat(1, 1fr);
   }
   .postImage{
-    width: 500px;
+    width: 350px;
   }
 }
