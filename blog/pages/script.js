@@ -33,10 +33,10 @@ fetch(URL)
     const blogPostContent = document.querySelector('.mainBlog');
     blogPostContent.innerHTML = `
         <h1>${blogPost.title}</h1>
-        <p>Author: ${blogPost.author.name}</p>
-        <p>Last Updated: ${blogPost._updatedAt}</p>
-        <img src="${blogPost.mainImage.asset.url}" alt="Main Image">
-        <p>${blogPost.body.children.text}</p>
+        <p class="author">Author: ${blogPost.author.name}</p>
+        <p class="date">Last Updated: ${blogPost._updatedAt}</p>
+        <img class="postImage" src="${blogPost.mainImage.asset.url}" alt="Main Image">
+        <p class="postText">${blogPost.body.children.text}</p>
     `;
   })
   .catch(error => {
