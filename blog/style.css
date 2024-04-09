@@ -534,6 +534,6 @@ h1{
     grid-template-columns: repeat(1, 1fr);
   }
   .postImage{
-    width: 350px;
+    width: 250px;
   }
 }
