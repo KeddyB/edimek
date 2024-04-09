@@ -393,7 +393,7 @@ h1{
 /* blog posts */
 .postImage{
   display: block;
-  max-width: 700px;
+  max-width: 300px;
   margin: auto;
   align-items: center;
   justify-content: center;
@@ -515,7 +515,7 @@ h1{
     margin-top: 50px;
   }
   .postImage{
-    width: 500px;
+    width: 250px;
   }
 
   @keyframes slideIn {
